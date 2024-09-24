@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <body class="cart">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <div id="cartItems"></div>
+        <button id="checkoutButton" class="checkout-btn">Checkout</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 E-Commerce Store. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cartItemsDiv = document.getElementById('cartItems');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p>Your cart is empty</p>';
+            } else {
+                cart.forEach((item, index) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('cart-item');
+                    itemDiv.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <h2>${item.name}</h2>
+                        <p>Price: ${item.price} PKR</p>
+                        <p>Size: ${item.size}</p>
+                        <p>Quantity: ${item.quantity}</p>
+                        <button class="removeButton" data-index="${index}">Remove</button>
+                    `;
+                    cartItemsDiv.appendChild(itemDiv);
+                });
+            }
+
+            // Remove item from cart
+            document.querySelectorAll('.removeButton').forEach(button => {
+                button.addEventListener('click', function () {
+                    const index = this.dataset.index;
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    window.location.reload(); // Reload the page to update cart
+                });
+            });
+
+            // Checkout button redirects to the main page
+            document.getElementById('checkoutButton').addEventListener('click', function () {
+                window.location.href = 'index.html'; // Redirect to home page
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <body class="home">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About Us</a>
+        <div class="cart-icon">
+            <a href="cart.html">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/004/798/846/small/shopping-cart-logo-or-icon-design-vector.jpg" alt="Cart">
+            </a>
+        </div>
+    </div>
+
+    <section id="home" class="section home">
+        <div class="hero">
+            <h1>Welcome to Tipsa — Where Style Meets Simplicity</h1>
+            <p>Discover the essence of style with our meticulously curated collection.</p>
+        </div>
+        <div class="image-carousel">
+            <div class="item" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSATr2UjjE6WdWwsIxg5TDNwDH_jHwgIAw_6bw6lBAal8l_zilv5XV2O5SN_JgB6FRYxI&usqp=CAU');"></div>
+            <div class="item" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5-9HzrQIARM4kvFAaWTofLe3Y3Pwwm-MwMtQpCM0G_B62ghiZRFzYMMdUNDw21ONx6aw&usqp=CAU');"></div>
+            <div class="item" style="background-image: url('https://img.freepik.com/premium-photo/mockup-design-brown-tshirt-blank_856660-6136.jpg');"></div>
+            <div class="item" style="background-image: url('https://img.freepik.com/premium-photo/mockup-design-white-tshirt-blank_856660-6915.jpg');"></div>
+            <div class="item" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXcFiXXnLKIi2H0y5Ye4nmeLDZUBsksWhF2QscI7Un63Ot4VkJM_WJK24XLTU8LsBMfA&usqp=CAU');"></div>
+        </div>
+    </section>
+
+    <section id="shop" class="section shop">
+        <h2>Shop Our Products</h2>
+        <div class="shop-container">
+            <div class="shop-item" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSATr2UjjE6WdWwsIxg5TDNwDH_jHwgIAw_6bw6lBAal8l_zilv5XV2O5SN_JgB6FRYxI&usqp=CAU');">Product 1</div>
+            <div class="shop-item" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5-9HzrQIARM4kvFAaWTofLe3Y3Pwwm-MwMtQpCM0G_B62ghiZRFzYMMdUNDw21ONx6aw&usqp=CAU');">Product 2</div>
+            <div class="shop-item" style="background-image: url('https://img.freepik.com/premium-photo/mockup-design-brown-tshirt-blank_856660-6136.jpg');">Product 3</div>
+            <div class="shop-item" style="background-image: url('https://img.freepik.com/premium-photo/mockup-design-white-tshirt-blank_856660-6915.jpg');">Product 4</div>
+            <div class="shop-item" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXcFiXXnLKIi2H0y5Ye4nmeLDZUBsksWhF2QscI7Un63Ot4VkJM_WJK24XLTU8LsBMfA&usqp=CAU');">Product 5</div>
+            <div class="shop-item" style="background-image: url('https://yi-files.yellowimages.com/products/670000/670117/1157798-cover.jpg');">Product 6</div>
+            <div class="shop-item" style="background-image: url('https://yi-files.yellowimages.com/products/670000/670095/1157744-cover.jpg');">Product 7</div>
+            <div class="shop-item" style="background-image: url('https://us.eden-park.com/cdn/shop/files/E24CHECL0005_ROC10_b-hd-face_720x.jpg?v=1716999143');">Product 8</div>
+            <div class="shop-item" style="background-image: url('https://us.eden-park.com/cdn/shop/files/E24CHECL0005_MAM26_b-hd-face_720x.jpg?v=1716999141');">Product 9</div>
+            <div class="shop-item" style="background-image: url('https://americantall.com/cdn/shop/files/American-Tall-Men-Pincord-Button-Shirt-Intense-Rust-Off-Fig_533x.jpg?v=1719928777');">Product 10</div>
+        </div>
+    </section>
+
+    <section id="about-us" class="section about">
+        <h2>About Us</h2>
+        <p>We are a leading e-commerce platform dedicated to providing high-quality products and exceptional customer service.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 E-Commerce Store. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Modal for Product Details -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalProductImage" src="" alt="Product Image" class="modal-product-image">
+            <h2 id="modalProductName"></h2>
+            <p>Price: <span id="modalProductPrice"></span> PKR</p>
+            <label for="size">Size:</label>
+            <select id="size">
+                <option value="S">Small</option>
+                <option value="M">Medium</option>
+                <option value="L">Large</option>
+            </select>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1">
+            <button id="addToCartButton">Add to Cart</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

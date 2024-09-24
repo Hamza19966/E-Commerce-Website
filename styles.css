@@ -1,0 +1,298 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.section {
+    padding: 50px;
+    text-align: center;
+}
+
+.home {
+    background: url('https://images.unsplash.com/photo-1464014449614-e470468e3ec1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8fHw%3D') no-repeat center center/cover;
+    color: white;
+    height: 100vh;
+}
+
+.image-carousel {
+    display: flex;
+    justify-content: center; /* Align items in the center horizontally */
+    align-items: center; /* Align items vertically */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust width to control image spacing */
+    height: 150px;
+    overflow: hidden;
+}
+
+.item {
+    width: 150px;
+    height: 150px;
+    margin: 0 15px; /* Add space between images */
+    background-size: cover;
+    background-position: center;
+    border: 2px solid white;
+    border-radius: 50%;
+    opacity: 0; /* Start with hidden images */
+    transition: opacity 1s ease-in; /* Smooth opacity transition */
+    flex-shrink: 0; /* Prevent items from shrinking */
+}
+
+.item.active {
+    opacity: 1; /* Show image when active */
+}
+
+
+
+
+.shop {
+    background-color: black;
+    color: white;
+}
+
+.shop-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.shop-item {
+    height: 200px;
+    background-size: cover;
+    position: relative;
+}
+
+.shop-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-product-image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+/* General Styles */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* ---------- Home Page Styles ---------- */
+body.home {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1464014449614-e470468e3ec1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8fHw%3D') no-repeat center center/cover;
+    color: white;
+}
+
+.image-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.item {
+    width: 150px;
+    height: 150px;
+    margin: 0 15px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid white;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    flex-shrink: 0;
+}
+
+.item.active {
+    opacity: 1;
+}
+
+/* ---------- Cart Page Styles ---------- */
+body.cart {
+    background: url('https://static.vecteezy.com/system/resources/previews/031/351/721/non_2x/composition-of-black-friday-shopping-cart-with-gift-boxes-or-bags-on-dark-background-and-copy-space-concept-by-ai-generated-free-photo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh; /* Ensure full page height for cart */
+}
+
+/* Cart Section */
+#cartItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.cart-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff3300;
+}
+
+#checkoutButton {
+    display: block;
+    margin: 20px auto;
+    background-color: #28a745;
+}
+
+#checkoutButton:hover {
+    background-color: #218838;
+}
+
+/* Header and Footer */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Ensure content always stretches to full page */
+.content-wrapper {
+    flex-grow: 1;
+}
+/* About Us Section */
+#about-us {
+
+    width: 100%; /* Ensure the section stretches to the full width of the viewport */
+    text-align: center;
+    background: url('https://static.vecteezy.com/system/resources/previews/031/351/721/non_2x/composition-of-black-friday-shopping-cart-with-gift-boxes-or-bags-on-dark-background-and-copy-space-concept-by-ai-generated-free-photo.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensure the background image covers the entire section */
+    padding: 50px 0; /* Add padding to give some space at the top and bottom */
+    color: white; /* Ensure text is white for better contrast */
+    font-size: 18px;
+}
+
+#about-us h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+#about-us p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
